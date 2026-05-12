@@ -1222,33 +1222,10 @@ section { padding: 120px 56px; position: relative; }
   .servicios { padding: 72px 22px 80px; }
   .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
-  /* Diferenciación — 2 columnas en móvil: label ancho completo, valores lado a lado */
-  .diff-table {
-    grid-template-columns: 1fr 1fr;
-  }
-  /* Ocultar celda de cabecera vacía (la del label) */
+  /* Diferenciación */
+  .diff-table { grid-template-columns: 1fr; }
   .diff-h:first-child { display: none; }
-  /* Las dos cabeceras quedan en una fila de 2 columnas */
-  .diff-h {
-    padding: 10px 12px;
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-align: center;
-  }
-  /* Etiqueta de cada fila ocupa ambas columnas */
-  .diff-row-label {
-    grid-column: 1 / -1;
-    font-size: 16px;
-    padding: 12px 14px;
-    background: rgba(107,26,42,0.06);
-    border-bottom: none;
-  }
-  /* Valores lado a lado, fuente más pequeña para que quepan */
-  .diff-cell {
-    font-size: 12px;
-    line-height: 1.45;
-    padding: 10px 12px;
-  }
+  .diff-h, .diff-table > div { padding: 14px 18px; }
 
   /* Banner */
   .banner { padding: 80px 22px; }
@@ -1389,21 +1366,21 @@ section { padding: 120px 56px; position: relative; }
     </div>
     <div class="pilares reveal-right">
       <div class="pilar glass">
-        <div class="pilar-num">01</div>
+        <div class="pilar-num"></div>
         <div class="pilar-body">
           <h3>Empoderar</h3>
           <p>Te explicamos tus derechos en palabras que sí entiendes. Sin tecnicismos vacíos.</p>
         </div>
       </div>
       <div class="pilar glass">
-        <div class="pilar-num">02</div>
+        <div class="pilar-num"></div>
         <div class="pilar-body">
           <h3>Democratizar</h3>
           <p>Asesoría jurídica accesible — no un lujo. La ley protege a quien la conoce.</p>
         </div>
       </div>
       <div class="pilar glass">
-        <div class="pilar-num">03</div>
+        <div class="pilar-num"></div>
         <div class="pilar-body">
           <h3>Coraje y Honestidad</h3>
           <p>Te decimos la verdad, aunque no sea la que querías escuchar. Sin promesas falsas.</p>
@@ -1416,7 +1393,7 @@ section { padding: 120px 56px; position: relative; }
 <!-- ════════ ABOGADAS ════════ -->
 <section class="abogadas" id="abogadas">
   <div class="section-head reveal">
-    <div class="eyebrow">0 2 &nbsp;—&nbsp; E L &nbsp; E Q U I P O</div>
+    <div class="eyebrow">&nbsp;—&nbsp; E L &nbsp; E Q U I P O</div>
     <h2>Las <em>abogadas</em> detrás de DM Legal.</h2>
     <p class="lead">Dos profesionales, una misma convicción: el derecho debe estar al alcance de todas.</p>
   </div>
@@ -1435,7 +1412,7 @@ section { padding: 120px 56px; position: relative; }
       </div>
     </div>
     <div class="abogada-body reveal-right">
-      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;0 1</div>
+      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;</div>
       <div class="abogada-name">Diana Ruiz</div>
       <div class="abogada-role">Socia Fundadora</div>
       <div class="abogada-specialty">Derecho Constitucional · Derecho de Familia</div>
@@ -1465,7 +1442,7 @@ section { padding: 120px 56px; position: relative; }
       </div>
     </div>
     <div class="abogada-body reveal-left">
-      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;0 2</div>
+      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;</div>
       <div class="abogada-name">Maira Alejandra Medina Castillo</div>
       <div class="abogada-role">Socia</div>
       <div class="abogada-specialty">Contratos · Actuaciones Penales</div>
