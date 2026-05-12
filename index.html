@@ -1222,10 +1222,33 @@ section { padding: 120px 56px; position: relative; }
   .servicios { padding: 72px 22px 80px; }
   .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
-  /* Diferenciación */
-  .diff-table { grid-template-columns: 1fr; }
+  /* Diferenciación — 2 columnas en móvil: label ancho completo, valores lado a lado */
+  .diff-table {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Ocultar celda de cabecera vacía (la del label) */
   .diff-h:first-child { display: none; }
-  .diff-h, .diff-table > div { padding: 14px 18px; }
+  /* Las dos cabeceras quedan en una fila de 2 columnas */
+  .diff-h {
+    padding: 10px 12px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-align: center;
+  }
+  /* Etiqueta de cada fila ocupa ambas columnas */
+  .diff-row-label {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    padding: 12px 14px;
+    background: rgba(107,26,42,0.06);
+    border-bottom: none;
+  }
+  /* Valores lado a lado, fuente más pequeña para que quepan */
+  .diff-cell {
+    font-size: 12px;
+    line-height: 1.45;
+    padding: 10px 12px;
+  }
 
   /* Banner */
   .banner { padding: 80px 22px; }
