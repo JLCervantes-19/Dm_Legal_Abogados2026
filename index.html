@@ -244,6 +244,7 @@ ul { list-style: none; }
 .is-visible    { opacity: 1 !important; transform: none !important; }
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right, .reveal-scale { transform: none; }
+  .slide-from-left, .slide-from-right { transform: none; opacity: 1; }
   * { animation: none !important; transition-duration: .01ms !important; }
 }
 
@@ -1211,6 +1212,11 @@ section { padding: 120px 56px; position: relative; }
   .abogada.mirror .abogada-body { order: initial; }
   .abogada { padding-bottom: 72px; }
   .abogada-foto { aspect-ratio: 3/4; }
+
+  /* En móvil el slide lateral saca la tarjeta del viewport por completo;
+     cambiamos a slide vertical para que el IntersectionObserver pueda disparar */
+  .slide-from-left,
+  .slide-from-right { transform: translateY(80px); }
 
   /* Servicios */
   .servicios { padding: 72px 22px 80px; }
