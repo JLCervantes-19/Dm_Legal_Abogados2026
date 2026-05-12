@@ -593,7 +593,7 @@ section { padding: 120px 56px; position: relative; }
 /* ════════════════════════════════════
    ABOGADAS
    ════════════════════════════════════ */
-.abogadas { background: var(--c-crema); }
+.abogadas { background: var(--c-crema); overflow-x: hidden; }
 .abogada {
   max-width: 1200px;
   margin: 0 auto;
@@ -688,30 +688,56 @@ section { padding: 120px 56px; position: relative; }
   z-index: 1;
   pointer-events: none;
 }
+/* ── Cutout: estado inicial oculto ── */
 .abogada-cutout {
   position: absolute;
   left: 50%; bottom: 0;
-  transform: translateX(-50%) translateY(20px);
-  height: 104%; width: auto;
+  height: 108%; width: auto;
   max-width: none;
   z-index: 2;
   opacity: 0;
-  filter: drop-shadow(0 30px 30px rgba(20,4,10,0.45));
-  transition: transform 1.4s var(--ease-out), opacity 1.0s ease-out;
-  animation: cutoutFloat 7s ease-in-out infinite 1.5s;
+  filter: drop-shadow(0 32px 32px rgba(20,4,10,0.50));
+  /* estado inicial: fuera de pantalla + abajo */
+  transform: translateX(-50%) translateY(60px);
+  /* transición lenta con delay para que llegue DESPUÉS del card */
+  transition:
+    transform 1.6s 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   1.2s 0.35s ease-out;
+  will-change: transform, opacity;
 }
-.is-visible .abogada-cutout,
-.abogada-card.is-visible .abogada-cutout {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
+
+/* ── Animación flotante (solo activa tras entrar) ── */
 @keyframes cutoutFloat {
   0%,100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(-8px); }
+  50%      { transform: translateX(-50%) translateY(-10px); }
 }
-.abogada-card:hover .abogada-halo { opacity: 1; animation-duration: 3s; }
+
+/* ── Cuando el card está visible: foto entra y flota ── */
+.abogada-card.slide-in .abogada-cutout {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  animation: cutoutFloat 7s ease-in-out infinite 2.2s;
+}
+
+.abogada-card:hover .abogada-halo  { opacity: 1; animation-duration: 3s; }
 .abogada-card:hover .abogada-cutout {
-  filter: drop-shadow(0 36px 38px rgba(20,4,10,0.55)) drop-shadow(0 0 24px rgba(232,213,163,0.25));
+  filter: drop-shadow(0 40px 40px rgba(20,4,10,0.60))
+          drop-shadow(0 0 28px rgba(232,213,163,0.28));
+}
+
+/* ── Cards: entran desde fuera de pantalla ── */
+.abogada-card {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   1.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-from-left  { transform: translateX(-420px); }
+.slide-from-right { transform: translateX( 420px); }
+.abogada-card.slide-in {
+  opacity: 1;
+  transform: translateX(0) !important;
 }
 /* Estado sin foto */
 .cutout-fallback { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:none; }
@@ -1368,12 +1394,12 @@ section { padding: 120px 56px; position: relative; }
 
   <!-- Abogada 01 -->
   <div class="abogada">
-    <div class="abogada-card glass reveal-left">
+    <div class="abogada-card glass slide-from-left">
       <div class="abogada-foto has-cutout">
         <div class="abogada-halo"></div>
         <div class="abogada-ground"></div>
         <img class="abogada-cutout"
-             src="assets/diana-cutout.png"
+             src="assets/diana-abogada.png"
              alt="Diana Ruiz — Abogada DM Legal"
              onerror="this.style.display='none';this.parentElement.classList.add('cutout-missing');">
         <div class="abogada-foto-initials cutout-fallback">D</div>
@@ -1398,13 +1424,13 @@ section { padding: 120px 56px; position: relative; }
 
   <!-- Abogada 02 -->
   <div class="abogada mirror">
-    <div class="abogada-card glass reveal-right">
+    <div class="abogada-card glass slide-from-right">
       <div class="abogada-foto has-cutout">
         <div class="abogada-halo"></div>
         <div class="abogada-ground"></div>
         <img class="abogada-cutout"
-             src="assets/abogada-02.png"
-             alt="Abogada DM Legal"
+             src="assets/maira-abogada.png"
+             alt="Maira Alejandra Medina Castillo — Abogada DM Legal"
              onerror="this.style.display='none';this.parentElement.classList.add('cutout-missing');">
         <div class="abogada-foto-initials cutout-fallback">M</div>
       </div>
@@ -1771,6 +1797,17 @@ section { padding: 120px 56px; position: relative; }
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
+
+  /* ── Slide-in dramático de tarjetas de abogadas ── */
+  const abogadaCards = document.querySelectorAll('.slide-from-left, .slide-from-right');
+  const abogadaIo = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('slide-in');
+      abogadaIo.unobserve(en.target);
+    });
+  }, { threshold: 0.05 });
+  abogadaCards.forEach(el => abogadaIo.observe(el));
 
   /* ── Contadores animados ── */
   const counters = document.querySelectorAll('[data-count]');
