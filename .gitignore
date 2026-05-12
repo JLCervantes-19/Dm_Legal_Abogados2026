@@ -1,0 +1,44 @@
+# ─── Secretos — NUNCA commitear ───
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ─── Dependencias ───
+node_modules/
+.pnp
+.pnp.js
+
+# ─── Build / outputs ───
+dist/
+build/
+.output/
+.vercel/
+.next/
+
+# ─── Logs ───
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ─── Editor ───
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ─── Coverage / tests ───
+coverage/
+.nyc_output/
+
+# ─── Miscelánea ───
+*.local

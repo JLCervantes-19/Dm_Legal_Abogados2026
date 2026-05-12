@@ -1,0 +1,1886 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DM Legal · Derecho claro, soluciones reales.</title>
+<meta name="description" content="Firma de abogadas colombianas especializada en derecho constitucional, familia y contratos. Derecho claro, soluciones reales.">
+<meta name="theme-color" content="#4A0F1C">
+
+<!-- Open Graph -->
+<meta property="og:title" content="DM Legal · Derecho claro, soluciones reales.">
+<meta property="og:description" content="Abogadas colombianas que traducen el derecho al idioma de la gente. Tutelas, familia, contratos, penal.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo-dm-legal.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Inconsolata:wght@400;500;600&family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════
+   DM LEGAL · Design System Tokens
+   Identidad de Marca v1.0 · 2025
+   ══════════════════════════════════════════════════════════ */
+:root {
+  /* Paleta oficial */
+  --c-guinda:          #4A0F1C;
+  --c-borgona:         #6B1A2A;
+  --c-oro:             #C9A84C;
+  --c-champagne:       #E8D5A3;
+  --c-crema:           #F9F5EE;
+  --c-guinda-deep:     #2E0812;
+  --c-borgona-soft:    #8C2438;
+  --c-oro-deep:        #A98736;
+  --c-champagne-soft:  #F2E4C2;
+  --c-crema-warm:      #EFE7D6;
+
+  /* Superficies semánticas */
+  --bg:           var(--c-guinda);
+  --bg-2:         var(--c-borgona);
+  --bg-elevated:  #561523;
+  --fg:           var(--c-crema);
+  --fg-2:         var(--c-champagne);
+  --fg-muted:     #C9B89A;
+  --accent:       var(--c-oro);
+  --accent-soft:  var(--c-champagne);
+  --rule:         rgba(201,168,76,0.32);
+  --rule-soft:    rgba(232,213,163,0.18);
+
+  /* Tipografía */
+  --font-display: "Cormorant Garamond", "Garamond", Georgia, serif;
+  --font-body:    "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Inconsolata", "SF Mono", Menlo, monospace;
+
+  /* Escala tipográfica */
+  --fs-hero:    clamp(52px, 8vw, 112px);
+  --fs-h1:      clamp(40px, 5vw, 72px);
+  --fs-h2:      clamp(32px, 4.6vw, 64px);
+  --fs-h3:      22px;
+  --fs-lead:    19px;
+  --fs-body:    16px;
+  --fs-small:   14px;
+  --fs-eyebrow: 11px;
+  --fs-mono:    12px;
+
+  /* Espaciado */
+  --s-1:  4px;  --s-2:  8px;  --s-3:  12px; --s-4:  16px;
+  --s-5:  24px; --s-6:  32px; --s-7:  48px; --s-8:  64px;
+  --s-9:  96px; --s-10: 128px;
+
+  /* Bordes */
+  --border-hair: 1px solid var(--rule);
+  --border-gold: 1px solid var(--c-oro);
+  --border-soft: 1px solid var(--rule-soft);
+
+  /* Sombras */
+  --shadow-2: 0 12px 28px -16px rgba(46,8,18,0.55);
+  --shadow-3: 0 24px 48px -20px rgba(46,8,18,0.65);
+
+  /* Movimiento */
+  --ease-out:     cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out:  cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-elegant: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-quick:  140ms;
+  --t-base:   240ms;
+  --t-slow:   480ms;
+
+  /* Ornamento */
+  --orn-hair: linear-gradient(90deg, transparent, var(--c-oro) 35%, var(--c-oro) 65%, transparent);
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--c-crema);
+  color: var(--c-borgona);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { overflow-x: hidden; cursor: none; }
+img { max-width: 100%; display: block; }
+a  { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: none; border: 0; background: transparent; color: inherit; }
+ul { list-style: none; }
+
+/* ─── Superficies glass ─── */
+.glass {
+  background: rgba(249,245,238,0.45);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(201,168,76,0.25);
+  box-shadow: 0 8px 32px rgba(74,15,28,0.08), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(201,168,76,0.10);
+  border-radius: 2px;
+}
+.glass-dark {
+  background: rgba(74,15,28,0.35);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(201,168,76,0.20);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20), inset 0 1px 0 rgba(201,168,76,0.15);
+  border-radius: 2px;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .glass      { background: rgba(249,245,238,0.92); }
+  .glass-dark { background: rgba(74,15,28,0.85); }
+}
+
+/* ─── Tipografía utilitaria ─── */
+.display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+.eyebrow, .kicker {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-oro-deep);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  font-weight: 300;
+  color: #6b5547;
+  max-width: 60ch;
+}
+
+/* ─── Botones ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: transform .25s var(--ease-out), background .25s, box-shadow .25s, color .25s;
+  cursor: none;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--c-oro);
+  color: var(--c-guinda);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+}
+.btn-primary:hover {
+  background: var(--c-oro-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(169,135,54,0.45);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--c-borgona);
+  border: 1px solid rgba(107,26,42,0.40);
+}
+.btn-ghost:hover {
+  background: rgba(107,26,42,0.06);
+  border-color: var(--c-borgona);
+}
+.btn-on-dark {
+  background: transparent;
+  color: var(--c-champagne);
+  border: 1px solid rgba(232,213,163,0.45);
+}
+.btn-on-dark:hover {
+  background: rgba(232,213,163,0.10);
+  border-color: var(--c-oro);
+  color: var(--c-oro);
+}
+
+/* ─── Cursor personalizado ─── */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--c-oro);
+  border-radius: 999px;
+  transition: transform .12s var(--ease-out);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.55);
+  border-radius: 999px;
+  transition: width .25s var(--ease-out), height .25s var(--ease-out), border-color .25s;
+}
+.cursor-ring.hover { width: 60px; height: 60px; border-color: var(--c-oro); }
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body { cursor: auto; }
+  button, .btn, a { cursor: pointer; }
+}
+
+/* ─── Revelaciones de entrada ─── */
+.reveal, .reveal-left, .reveal-right, .reveal-scale {
+  opacity: 0;
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+}
+.reveal        { transform: translateY(50px); }
+.reveal-left   { transform: translateX(-60px); }
+.reveal-right  { transform: translateX(60px); }
+.reveal-scale  { transform: scale(0.92); }
+.is-visible    { opacity: 1 !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { transform: none; }
+  * { animation: none !important; transition-duration: .01ms !important; }
+}
+
+/* ════════════════════════════════════
+   NAV
+   ════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 56px;
+  height: 80px;
+  background: rgba(249,245,238,0.30);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1px solid transparent;
+  transition: height .2s var(--ease-out), background .2s, border-color .2s;
+}
+.nav.scrolled {
+  height: 64px;
+  background: rgba(249,245,238,0.55);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-bottom: 1px solid rgba(201,168,76,0.32);
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand-mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--c-guinda);
+  line-height: 1;
+}
+.nav-brand small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-oro-deep);
+  margin-top: 3px;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-borgona);
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.nav-links a:hover { color: var(--c-oro-deep); border-bottom-color: var(--c-oro); }
+.nav-burger {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+.nav-burger span {
+  width: 22px; height: 1.5px;
+  background: var(--c-guinda);
+  position: relative;
+  transition: transform .25s;
+}
+.nav-burger span::before,
+.nav-burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px; height: 1.5px;
+  background: var(--c-guinda);
+  transition: transform .25s;
+}
+.nav-burger span::before { top: -7px; }
+.nav-burger span::after  { top:  7px; }
+.nav-burger.open span                 { background: transparent; }
+.nav-burger.open span::before { transform: translateY(7px)  rotate(45deg);  }
+.nav-burger.open span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ════════════════════════════════════
+   HERO
+   ════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 56px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--c-crema);
+}
+.hero-blobs {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.10;
+}
+.blob.b1 { width:520px; height:520px; background:var(--c-borgona); top:-120px; left:-100px; animation:floatBlob 22s var(--ease-in-out) infinite; }
+.blob.b2 { width:420px; height:420px; background:var(--c-champagne); bottom:-100px; right:-80px; animation:floatBlob 26s var(--ease-in-out) infinite reverse; opacity:0.28; }
+.blob.b3 { width:340px; height:340px; background:var(--c-oro); top:40%; left:55%; animation:floatBlob 30s var(--ease-in-out) infinite; opacity:0.08; }
+.blob.b4 { width:280px; height:280px; background:var(--c-guinda); top:20%; right:18%; animation:floatBlob 24s var(--ease-in-out) infinite reverse; opacity:0.07; }
+@keyframes floatBlob {
+  0%,100% { transform: translate(0,0) rotate(0) scale(1); }
+  33%      { transform: translate(60px,-40px) rotate(120deg) scale(1.08); }
+  66%      { transform: translate(-50px,60px) rotate(240deg) scale(0.94); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+}
+.hero-logo {
+  width: 170px; height: 170px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoIn .9s var(--ease-out) both;
+}
+.hero-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: var(--shadow-3);
+}
+@keyframes logoIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+
+.hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--c-oro-deep);
+  margin-bottom: 20px;
+  animation: slideDown .9s .3s var(--ease-out) both;
+}
+@keyframes slideDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); } }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-hero);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--c-guinda);
+  margin-bottom: 24px;
+  animation: slideUp 1s .6s var(--ease-out) both;
+}
+.hero h1 em { color: var(--c-oro-deep); font-style: italic; }
+@keyframes slideUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+.hero-divider {
+  width: 0;
+  height: 1px;
+  background: var(--c-oro);
+  margin: 0 auto 28px;
+  animation: expand .8s .9s var(--ease-out) forwards;
+}
+@keyframes expand { to { width: 120px; } }
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: #6b5547;
+  max-width: 62ch;
+  margin: 0 auto 40px;
+  animation: fade 1s 1.1s var(--ease-out) both;
+}
+.hero-sub strong { font-weight: 500; color: var(--c-borgona); }
+@keyframes fade { from { opacity:0; } to { opacity:1; } }
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: slideUp 1s 1.3s var(--ease-out) both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fade 1s 1.6s var(--ease-out) both;
+}
+.hero-scroll .mono { color: var(--c-oro-deep); font-size: 10px; letter-spacing: 0.40em; }
+.hero-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(180deg, var(--c-oro), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.hero-scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -24px; left: 0;
+  width: 1px; height: 24px;
+  background: linear-gradient(180deg, transparent, var(--c-crema));
+  animation: scrollDot 2s var(--ease-in-out) infinite;
+}
+@keyframes scrollDot { 0% { transform:translateY(0); } 100% { transform:translateY(72px); } }
+
+/* ════════════════════════════════════
+   STATS
+   ════════════════════════════════════ */
+.stats {
+  background: var(--c-borgona);
+  padding: 80px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.stats::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(232,213,163,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+}
+.stats-grid {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.stat { padding: 36px 28px; text-align: center; }
+.stat-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 68px;
+  line-height: 1;
+  color: var(--c-oro);
+  margin-bottom: 8px;
+}
+.stat-num .suffix { font-size: 42px; }
+.stat-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-champagne);
+}
+
+/* ════════════════════════════════════
+   SECCIONES — base compartida
+   ════════════════════════════════════ */
+section { padding: 120px 56px; position: relative; }
+.section-head {
+  max-width: 780px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--c-guinda);
+  margin: 14px 0 16px;
+}
+.section-head h2 em { color: var(--c-oro-deep); font-style: italic; }
+.section-head .lead { margin: 0 auto; }
+
+/* ════════════════════════════════════
+   NOSOTRAS
+   ════════════════════════════════════ */
+.nosotras { background: var(--c-crema); }
+.nosotras-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 80px;
+  align-items: center;
+}
+.nosotras-text h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(36px, 4.6vw, 60px);
+  line-height: 1.05;
+  color: var(--c-guinda);
+  margin-bottom: 24px;
+}
+.nosotras-text h2 em { color: var(--c-oro-deep); }
+.nosotras-text p {
+  margin-bottom: 18px;
+  color: #6b5547;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.nosotras-text p strong { font-weight: 500; color: var(--c-borgona); }
+.pilares { display: flex; flex-direction: column; gap: 18px; }
+.pilar {
+  padding: 28px 30px;
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  border-left: 2px solid var(--c-oro);
+}
+.pilar-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--c-oro-deep);
+  min-width: 36px;
+  padding-top: 6px;
+}
+.pilar-body h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--c-guinda);
+  margin-bottom: 6px;
+}
+.pilar-body p { font-size: 14px; line-height: 1.65; color: #6b5547; }
+
+/* ════════════════════════════════════
+   ABOGADAS
+   ════════════════════════════════════ */
+.abogadas { background: var(--c-crema); }
+.abogada {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 72px;
+  align-items: center;
+  padding-bottom: 120px;
+}
+.abogada.mirror { grid-template-columns: 1fr 0.85fr; }
+.abogada.mirror .abogada-card  { order: 2; }
+.abogada.mirror .abogada-body  { order: 1; }
+.abogada:last-child { padding-bottom: 0; }
+
+.abogada-card { padding: 14px; }
+.abogada-foto {
+  aspect-ratio: 4/5;
+  width: 100%;
+  background: linear-gradient(160deg, #f5ecd8 0%, #f9f5ee 50%, #ebdcb8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-oro-deep);
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.45);
+  overflow: hidden;
+}
+.abogada-foto::before {
+  content: "";
+  position: absolute; inset: 14px;
+  border: 1px solid rgba(201,168,76,0.35);
+  pointer-events: none;
+}
+.abogada-foto::after {
+  content: "";
+  position: absolute;
+  top: 18px; left: 18px;
+  width: 28px; height: 28px;
+  border-top: 1px solid var(--c-oro);
+  border-left: 1px solid var(--c-oro);
+}
+.abogada-foto-initials {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--c-oro);
+}
+.abogada-foto-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(232,213,163,0.55);
+  margin-top: 14px;
+}
+/* Cutout con fondo removido */
+.abogada-foto.has-cutout { display: block; }
+.abogada-foto.has-cutout::before {
+  content: "";
+  position: absolute; inset: 14px;
+  border: 1px solid rgba(201,168,76,0.35);
+  pointer-events: none;
+  z-index: 3;
+}
+.abogada-foto.has-cutout::after { display: none; }
+
+.abogada-halo {
+  position: absolute;
+  left: 50%; top: 48%;
+  transform: translate(-50%, -50%);
+  width: 115%; height: 90%;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.38) 0%, rgba(232,213,163,0.25) 30%, transparent 65%);
+  filter: blur(8px);
+  z-index: 1;
+  pointer-events: none;
+  animation: haloPulse 6s ease-in-out infinite;
+}
+@keyframes haloPulse {
+  0%,100% { opacity:.85; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.06); }
+}
+.abogada-ground {
+  position: absolute;
+  left: 50%; bottom: 4%;
+  transform: translateX(-50%);
+  width: 78%; height: 22px;
+  background: radial-gradient(ellipse at center, rgba(74,15,28,0.35) 0%, rgba(74,15,28,0.15) 40%, transparent 70%);
+  filter: blur(8px);
+  z-index: 1;
+  pointer-events: none;
+}
+.abogada-cutout {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%) translateY(20px);
+  height: 104%; width: auto;
+  max-width: none;
+  z-index: 2;
+  opacity: 0;
+  filter: drop-shadow(0 30px 30px rgba(20,4,10,0.45));
+  transition: transform 1.4s var(--ease-out), opacity 1.0s ease-out;
+  animation: cutoutFloat 7s ease-in-out infinite 1.5s;
+}
+.is-visible .abogada-cutout,
+.abogada-card.is-visible .abogada-cutout {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+@keyframes cutoutFloat {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-8px); }
+}
+.abogada-card:hover .abogada-halo { opacity: 1; animation-duration: 3s; }
+.abogada-card:hover .abogada-cutout {
+  filter: drop-shadow(0 36px 38px rgba(20,4,10,0.55)) drop-shadow(0 0 24px rgba(232,213,163,0.25));
+}
+/* Estado sin foto */
+.cutout-fallback { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:none; }
+.abogada-foto.has-cutout.cutout-missing .cutout-fallback { display: block; }
+.abogada-foto.has-cutout.cutout-missing .abogada-halo,
+.abogada-foto.has-cutout.cutout-missing .abogada-ground { display: none; }
+
+/* Tag de credencial */
+.abogada-credtag {
+  position: absolute;
+  top: 24px; right: 24px;
+  z-index: 4;
+  padding: 8px 14px;
+  background: rgba(20,4,10,0.45);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(201,168,76,0.55);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--c-oro);
+}
+@media (prefers-reduced-motion: reduce) {
+  .abogada-cutout, .abogada-halo { animation: none !important; }
+}
+
+/* Cuerpo de la abogada */
+.abogada-body .eyebrow { margin-bottom: 8px; }
+.abogada-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(40px, 4.6vw, 60px);
+  line-height: 1.0;
+  color: var(--c-guinda);
+  margin-bottom: 8px;
+}
+.abogada-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-oro-deep);
+  margin-bottom: 24px;
+}
+.abogada-specialty {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--c-borgona);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+.abogada-bio {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #6b5547;
+  margin-bottom: 16px;
+}
+.abogada-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.tag {
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-borgona);
+  transition: transform .2s, color .2s, border-color .2s;
+}
+.tag:hover { color: var(--c-oro-deep); border-color: var(--c-oro); transform: translateY(-2px); }
+
+/* ════════════════════════════════════
+   SERVICIOS
+   ════════════════════════════════════ */
+.servicios {
+  background: var(--c-guinda);
+  padding: 120px 56px 140px;
+  position: relative;
+  overflow: hidden;
+}
+.servicios::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(232,213,163,0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.55;
+}
+.servicios .section-head h2       { color: var(--c-crema); }
+.servicios .section-head h2 em    { color: var(--c-oro); }
+.servicios .section-head .lead    { color: var(--c-champagne); }
+.servicios .section-head .eyebrow { color: var(--c-oro); }
+
+.servicios-grid {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.svc {
+  padding: 34px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  transition: transform .25s var(--ease-out), border-color .25s, background .25s;
+}
+.svc:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.55);
+  background: rgba(74,15,28,0.50);
+}
+.svc-icon { width: 42px; height: 42px; color: var(--c-oro); }
+.svc-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--c-oro);
+}
+.svc-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--c-crema);
+}
+.svc-copy {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--c-champagne);
+  font-weight: 300;
+}
+.svc-list {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(232,213,163,0.70);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(201,168,76,0.18);
+}
+.svc-list li { padding-left: 14px; position: relative; }
+.svc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 6px;
+  width: 6px; height: 1px;
+  background: var(--c-oro);
+}
+
+/* ════════════════════════════════════
+   DIFERENCIACIÓN
+   ════════════════════════════════════ */
+.diff { background: var(--c-crema); }
+.diff-table {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid rgba(107,26,42,0.20);
+}
+.diff-table > div {
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(107,26,42,0.12);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.diff-h {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  background: transparent;
+  font-weight: 600;
+}
+.diff-h.col-other { color: #a08775; }
+.diff-h.col-dm    { color: var(--c-oro-deep); }
+.diff-row-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--c-guinda);
+}
+.diff-cell { color: #6b5547; }
+.diff-cell.dm {
+  color: var(--c-borgona);
+  font-weight: 500;
+  background: rgba(232,213,163,0.20);
+}
+
+/* ════════════════════════════════════
+   BANNER QUOTE
+   ════════════════════════════════════ */
+.banner {
+  background: var(--c-borgona);
+  padding: 140px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.banner::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(232,213,163,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+}
+.banner-inner {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 64px;
+  text-align: center;
+}
+.banner-mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 90px;
+  line-height: 0.6;
+  color: var(--c-oro);
+  opacity: 0.55;
+  margin-bottom: 8px;
+}
+.banner-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.22;
+  color: var(--c-crema);
+  margin-bottom: 32px;
+}
+.banner-quote em { color: var(--c-oro); font-style: italic; }
+.banner-cite {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--c-champagne);
+}
+
+/* ════════════════════════════════════
+   CONTACTO
+   ════════════════════════════════════ */
+.contacto { background: var(--c-crema); }
+.contacto-grid {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.contacto-card {
+  padding: 32px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .25s var(--ease-out), border-color .25s;
+}
+.contacto-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.55); }
+.contacto-card .eyebrow { color: var(--c-oro-deep); }
+.contacto-card h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--c-guinda);
+}
+.contacto-card p { font-size: 14px; color: #6b5547; line-height: 1.55; }
+.contacto-card .mono { color: var(--c-borgona); font-size: 13px; letter-spacing: 0.14em; text-transform: none; }
+.contacto-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════ */
+.footer {
+  background: var(--c-guinda-deep);
+  padding: 80px 56px 40px;
+  color: var(--c-champagne);
+  position: relative;
+  overflow: hidden;
+}
+.footer::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(232,213,163,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.4;
+}
+.footer-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(201,168,76,0.18);
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 44px;
+  color: var(--c-oro);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.footer-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-champagne);
+  margin-bottom: 18px;
+}
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(232,213,163,0.65);
+  max-width: 34ch;
+}
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-oro);
+  margin-bottom: 18px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 13.5px; color: rgba(232,213,163,0.75); transition: color .2s; }
+.footer-col a:hover { color: var(--c-oro); }
+.footer-bottom {
+  position: relative;
+  max-width: 1200px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(232,213,163,0.45);
+}
+
+/* ════════════════════════════════════
+   WHATSAPP FAB
+   ════════════════════════════════════ */
+.wfab {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 90;
+  width: 64px; height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(232,213,163,0.55) 0%, rgba(201,168,76,0.42) 35%, rgba(122,28,52,0.55) 100%);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(232,213,163,0.45);
+  box-shadow: 0 12px 32px rgba(74,15,28,0.32), inset 0 2px 8px rgba(255,255,255,0.30), inset 0 -4px 10px rgba(74,15,28,0.25);
+  animation: fabBob 4.5s ease-in-out infinite;
+}
+.wfab svg {
+  width: 30px; height: 30px;
+  color: #fff;
+  position: relative; z-index: 3;
+  filter: drop-shadow(0 1px 3px rgba(74,15,28,0.45));
+}
+.wfab::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201,168,76,0.55);
+  animation: ripple1 2.6s ease-out infinite;
+}
+.wfab::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201,168,76,0.40);
+  animation: ripple2 2.6s ease-out infinite 1.3s;
+}
+@keyframes ripple1 { 0%{transform:scale(1);opacity:.85;} 100%{transform:scale(1.8);opacity:0;} }
+@keyframes ripple2 { 0%{transform:scale(1);opacity:.75;} 100%{transform:scale(2.0);opacity:0;} }
+@keyframes fabBob  { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+.wfab:hover { animation-play-state: paused; transform: translateY(-3px) scale(1.06); transition: transform .3s var(--ease-out); }
+
+.wfab-tip {
+  position: absolute;
+  right: 74px; top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-guinda);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s, transform .25s var(--ease-out);
+}
+.wfab:hover .wfab-tip { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+/* ════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════ */
+/* ── Tablet / móvil grande (≤ 900px) ── */
+@media (max-width: 900px) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+  button, .btn, a { cursor: pointer; }
+
+  /* Nav */
+  .nav { padding: 14px 22px; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    padding: 24px;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(249,245,238,0.96);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+  }
+  .nav-links.open { display: flex; }
+  .nav-burger { display: flex; }
+
+  /* Hero */
+  .hero { padding: 110px 22px 72px; }
+  .hero-logo { width: 130px; height: 130px; }
+  .hero-sub { font-size: 17px; }
+  .hero-ctas { gap: 10px; }
+
+  /* Secciones */
+  section { padding: 72px 22px; }
+  .section-head { margin-bottom: 44px; }
+
+  /* Stats */
+  .stats { padding: 56px 22px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .stat { padding: 28px 18px; }
+  .stat-num { font-size: 52px; }
+  .stat-num .suffix { font-size: 34px; }
+
+  /* Nosotras */
+  .nosotras-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Abogadas */
+  .abogada,
+  .abogada.mirror { grid-template-columns: 1fr; gap: 36px; }
+  .abogada.mirror .abogada-card,
+  .abogada.mirror .abogada-body { order: initial; }
+  .abogada { padding-bottom: 72px; }
+  .abogada-foto { aspect-ratio: 3/4; }
+
+  /* Servicios */
+  .servicios { padding: 72px 22px 80px; }
+  .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  /* Diferenciación */
+  .diff-table { grid-template-columns: 1fr; }
+  .diff-h:first-child { display: none; }
+  .diff-h, .diff-table > div { padding: 14px 18px; }
+
+  /* Banner */
+  .banner { padding: 80px 22px; }
+  .banner-inner { padding: 40px 24px; }
+
+  /* Contacto */
+  .contacto-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer { padding: 56px 22px 32px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .footer-bottom > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  /* FAB */
+  .wfab-tip { display: none; }
+}
+
+/* ── Móvil estándar (≤ 520px) ── */
+@media (max-width: 520px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero-tagline { letter-spacing: 0.18em; font-size: 10px; }
+  .abogada-tags { gap: 6px; }
+  .tag { font-size: 10px; padding: 6px 10px; }
+  .btn { padding: 13px 20px; font-size: 11px; }
+}
+
+/* ── Móvil pequeño (≤ 390px — iPhone SE, Android compacto) ── */
+@media (max-width: 390px) {
+  .hero { padding: 100px 16px 64px; }
+  section { padding: 56px 16px; }
+  .stats { padding: 44px 16px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+  .stat { padding: 22px 16px; }
+  .stat-num { font-size: 48px; }
+  .servicios { padding: 56px 16px 64px; }
+  .banner { padding: 56px 16px; }
+  .banner-inner { padding: 28px 18px; }
+  .footer { padding: 44px 16px 28px; }
+  .nav { padding: 12px 16px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .contacto-ctas { flex-direction: column; align-items: center; }
+  .contacto-ctas .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor personalizado -->
+<div class="cursor-dot" id="cdot"></div>
+<div class="cursor-ring" id="cring"></div>
+
+<!-- ════════ NAV ════════ -->
+<header class="nav glass" id="nav">
+  <a class="nav-brand" href="#top">
+    <div class="nav-brand-mark">DM Legal<small>Derecho Claro · Soluciones Reales</small></div>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#nosotras">Nosotras</a>
+    <a href="#abogadas">Abogadas</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="btn btn-primary" style="padding:11px 20px;">Consulta gratuita</a>
+  </nav>
+  <button class="nav-burger" id="burger" aria-label="Menú"><span></span></button>
+</header>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="top">
+  <div class="hero-blobs">
+    <div class="blob b1" data-parallax="0.05"></div>
+    <div class="blob b2" data-parallax="0.04"></div>
+    <div class="blob b3" data-parallax="0.06"></div>
+    <div class="blob b4" data-parallax="0.03"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img src="assets/logo-dm-legal.png" alt="DM Legal" onerror="this.src='assets/logo-dm-legal.jpeg'">
+    </div>
+    <div class="hero-tagline">D E R E C H O &nbsp;·&nbsp; C L A R O &nbsp;·&nbsp; S O L U C I O N E S &nbsp;·&nbsp; R E A L E S</div>
+    <h1>La ley no fue escrita<br>para <em>confundirte</em>.</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Somos DM Legal — una firma de abogadas colombianas que traduce el derecho al idioma de la gente. Constitucional, familia, contratos, penal. Te explicamos lo que necesitas saber <strong>antes</strong> de que el problema se te salga de las manos.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#contacto">Agenda tu consulta</a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="mono">Scroll</div>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════ STATS ════════ -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat glass-dark reveal-scale">
+      <div class="stat-num"><span data-count="500">0</span><span class="suffix">+</span></div>
+      <div class="stat-label">Clientes Atendidas</div>
+    </div>
+    <div class="stat glass-dark reveal-scale">
+      <div class="stat-num"><span data-count="8">0</span></div>
+      <div class="stat-label">Áreas de Práctica</div>
+    </div>
+    <div class="stat glass-dark reveal-scale">
+      <div class="stat-num"><span data-count="95">0</span><span class="suffix">%</span></div>
+      <div class="stat-label">Casos con Éxito</div>
+    </div>
+    <div class="stat glass-dark reveal-scale">
+      <div class="stat-num"><span data-count="5">0</span></div>
+      <div class="stat-label">Años de Experiencia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ NOSOTRAS ════════ -->
+<section class="nosotras" id="nosotras">
+  <div class="nosotras-grid">
+    <div class="nosotras-text reveal-left">
+      <div class="eyebrow">0 1 &nbsp;—&nbsp; N O S O T R A S</div>
+      <h2>Somos abogadas. Hablamos como tu <em>amiga</em>.</h2>
+      <p>DM Legal nació de una idea simple y necesaria: <strong>el derecho no le pertenece a los abogados.</strong> Le pertenece a las personas. A ti.</p>
+      <p>Por años, vimos cómo la ley se contaba en un idioma que excluía. Decidimos contarla diferente. Con cercanía, con coraje y con la convicción de que entender lo que firmas, lo que reclamas y lo que mereces no debería ser un privilegio.</p>
+      <p>Hoy acompañamos a personas naturales, familias y emprendedoras en Colombia — desde el primer "no sé qué hacer" hasta el "ya lo resolvimos".</p>
+    </div>
+    <div class="pilares reveal-right">
+      <div class="pilar glass">
+        <div class="pilar-num">01</div>
+        <div class="pilar-body">
+          <h3>Empoderar</h3>
+          <p>Te explicamos tus derechos en palabras que sí entiendes. Sin tecnicismos vacíos.</p>
+        </div>
+      </div>
+      <div class="pilar glass">
+        <div class="pilar-num">02</div>
+        <div class="pilar-body">
+          <h3>Democratizar</h3>
+          <p>Asesoría jurídica accesible — no un lujo. La ley protege a quien la conoce.</p>
+        </div>
+      </div>
+      <div class="pilar glass">
+        <div class="pilar-num">03</div>
+        <div class="pilar-body">
+          <h3>Coraje y Honestidad</h3>
+          <p>Te decimos la verdad, aunque no sea la que querías escuchar. Sin promesas falsas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ABOGADAS ════════ -->
+<section class="abogadas" id="abogadas">
+  <div class="section-head reveal">
+    <div class="eyebrow">0 2 &nbsp;—&nbsp; E L &nbsp; E Q U I P O</div>
+    <h2>Las <em>abogadas</em> detrás de DM Legal.</h2>
+    <p class="lead">Dos profesionales, una misma convicción: el derecho debe estar al alcance de todas.</p>
+  </div>
+
+  <!-- Abogada 01 -->
+  <div class="abogada">
+    <div class="abogada-card glass reveal-left">
+      <div class="abogada-foto has-cutout">
+        <div class="abogada-halo"></div>
+        <div class="abogada-ground"></div>
+        <img class="abogada-cutout"
+             src="assets/diana-cutout.png"
+             alt="Diana Ruiz — Abogada DM Legal"
+             onerror="this.style.display='none';this.parentElement.classList.add('cutout-missing');">
+        <div class="abogada-foto-initials cutout-fallback">D</div>
+        <div class="abogada-credtag">T·P &nbsp;· &nbsp;Abogada</div>
+      </div>
+    </div>
+    <div class="abogada-body reveal-right">
+      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;0 1</div>
+      <div class="abogada-name">Diana Ruiz</div>
+      <div class="abogada-role">Socia Fundadora</div>
+      <div class="abogada-specialty">Derecho Constitucional · Derecho de Familia</div>
+      <p class="abogada-bio">Abogada con énfasis en derechos fundamentales y protección efectiva ante el Estado. Tutelas, peticiones y procesos de familia son su día a día — y su forma de creer que la justicia sí llega, cuando alguien sabe cómo pedirla.</p>
+      <p class="abogada-bio">Cree que detrás de cada caso hay una historia, y que la mejor defensa empieza por escuchar. Si la ley te dio la razón, ella encuentra cómo hacerla valer.</p>
+      <div class="abogada-tags">
+        <div class="tag glass">Tutela</div>
+        <div class="tag glass">Derecho de Petición</div>
+        <div class="tag glass">Filiación</div>
+        <div class="tag glass">Registro Civil</div>
+        <div class="tag glass">Acción de Cumplimiento</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Abogada 02 -->
+  <div class="abogada mirror">
+    <div class="abogada-card glass reveal-right">
+      <div class="abogada-foto has-cutout">
+        <div class="abogada-halo"></div>
+        <div class="abogada-ground"></div>
+        <img class="abogada-cutout"
+             src="assets/abogada-02.png"
+             alt="Abogada DM Legal"
+             onerror="this.style.display='none';this.parentElement.classList.add('cutout-missing');">
+        <div class="abogada-foto-initials cutout-fallback">M</div>
+        <div class="abogada-credtag">T·P &nbsp;· &nbsp;Abogada</div>
+      </div>
+    </div>
+    <div class="abogada-body reveal-left">
+      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;0 2</div>
+      <div class="abogada-name">Maira Alejandra Medina Castillo</div>
+      <div class="abogada-role">Socia</div>
+      <div class="abogada-specialty">Contratos · Actuaciones Penales</div>
+      <p class="abogada-bio">Abogada con foco en derecho contractual y acompañamiento penal. Redacta y revisa contratos antes de que el problema exista — y representa cuando ya existió. Su superpoder: leer entre líneas.</p>
+      <p class="abogada-bio">Convencida de que un contrato bien hecho previene años de juicio. Y de que ninguna denuncia debería enfrentarse en soledad.</p>
+      <div class="abogada-tags">
+        <div class="tag glass">Contratos</div>
+        <div class="tag glass">Compraventa</div>
+        <div class="tag glass">Arrendamiento</div>
+        <div class="tag glass">Denuncia Penal</div>
+        <div class="tag glass">Audiencias</div>
+        <div class="tag glass">Recursos Administrativos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SERVICIOS ════════ -->
+<section class="servicios" id="servicios">
+  <div class="section-head reveal">
+    <div class="eyebrow">0 3 &nbsp;—&nbsp; P O R T A F O L I O</div>
+    <h2>Ocho frentes. Una misma <em>forma de trabajar</em>.</h2>
+    <p class="lead">Cada caso es distinto. La claridad con que te lo explicamos, no.</p>
+  </div>
+  <div class="servicios-grid">
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 4v40M14 10h20l-2 6H16zM10 22h28M14 22l4 16M34 22l-4 16M14 38h20"/>
+      </svg>
+      <div class="svc-num">0 1</div>
+      <h3 class="svc-title">Derecho Constitucional</h3>
+      <p class="svc-copy">Protección efectiva de derechos fundamentales ante entidades públicas y privadas. Si el Estado los olvidó, los reclamamos.</p>
+      <ul class="svc-list">
+        <li>Acciones de tutela</li>
+        <li>Derechos de petición</li>
+        <li>Acciones de cumplimiento</li>
+        <li>Seguimiento de fallos</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="6" width="32" height="36"/><path d="M14 14h20M14 20h20M14 26h14M14 32h10"/><path d="M30 32l3 3 6-7"/>
+      </svg>
+      <div class="svc-num">0 2</div>
+      <h3 class="svc-title">Recursos Administrativos</h3>
+      <p class="svc-copy">Representación ante entidades públicas del orden nacional y territorial. Cuando la respuesta oficial no es suficiente, hay siguiente paso.</p>
+      <ul class="svc-list">
+        <li>Recursos de reposición</li>
+        <li>Recursos de apelación</li>
+        <li>Solicitudes y requerimientos</li>
+        <li>Seguimiento de actuaciones</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="24" cy="24" r="18"/><path d="M24 12v12l8 6"/>
+      </svg>
+      <div class="svc-num">0 3</div>
+      <h3 class="svc-title">Prescripción de Comparendos</h3>
+      <p class="svc-copy">Revisión de tu historial de tránsito y trámite de prescripción cuando ya pasaron los términos. Hay multas que no tienes que pagar.</p>
+      <ul class="svc-list">
+        <li>Estudio del historial</li>
+        <li>Verificación de términos</li>
+        <li>Análisis de viabilidad</li>
+        <li>Trámite ante autoridades</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 22h12M18 28h12M18 34h8"/>
+      </svg>
+      <div class="svc-num">0 4</div>
+      <h3 class="svc-title">Elaboración de Contratos</h3>
+      <p class="svc-copy">Antes de firmar, lee esto. Redacción, revisión y negociación en palabras que sí entiendes. Personas naturales y emprendedoras.</p>
+      <ul class="svc-list">
+        <li>Arrendamiento</li>
+        <li>Prestación de servicios</li>
+        <li>Compraventa</li>
+        <li>Mandato</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 38V14l16-8 16 8v24"/><path d="M4 42h40M14 42V22M24 42V18M34 42V22"/>
+      </svg>
+      <div class="svc-num">0 5</div>
+      <h3 class="svc-title">Trámites Civiles</h3>
+      <p class="svc-copy">Procesos de menor escala ante juzgados municipales. Cobro de obligaciones, memoriales, notificaciones — el papeleo que sí avanza tu caso.</p>
+      <ul class="svc-list">
+        <li>Cobro de obligaciones</li>
+        <li>Mínima y menor cuantía</li>
+        <li>Memoriales y solicitudes</li>
+        <li>Juzgados municipales</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="16" r="6"/><circle cx="34" cy="20" r="5"/>
+        <path d="M8 40c0-6 5-10 10-10s10 4 10 10M24 40c0-5 4-8 10-8s10 3 10 8"/>
+      </svg>
+      <div class="svc-num">0 6</div>
+      <h3 class="svc-title">Filiación · Familia</h3>
+      <p class="svc-copy">Determinación o impugnación del vínculo filial. Procesos delicados que acompañamos con cuidado humano y precisión jurídica.</p>
+      <ul class="svc-list">
+        <li>Investigación de paternidad</li>
+        <li>Impugnación de paternidad</li>
+        <li>Pruebas de ADN</li>
+        <li>Procesos de filiación</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 8h22l6 6v26H10z"/><path d="M18 22h14M18 28h14M14 16h4"/>
+        <path d="M30 38l3 3 5-6"/>
+      </svg>
+      <div class="svc-num">0 7</div>
+      <h3 class="svc-title">Corrección Registro Civil</h3>
+      <p class="svc-copy">Trámites notariales y judiciales para corregir lo que aparece mal en tu registro. Un error de tipeo no tiene por qué definir tu vida.</p>
+      <ul class="svc-list">
+        <li>Nombres y apellidos</li>
+        <li>Errores registrales</li>
+        <li>Trámites en notarías</li>
+        <li>Juzgados de familia</li>
+      </ul>
+    </article>
+
+    <article class="svc glass-dark reveal-scale">
+      <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 4l16 6v12c0 12-8 18-16 22-8-4-16-10-16-22V10z"/>
+        <path d="M18 24l4 4 9-9"/>
+      </svg>
+      <div class="svc-num">0 8</div>
+      <h3 class="svc-title">Actuaciones Penales</h3>
+      <p class="svc-copy">Acompañamiento desde la denuncia hasta la audiencia. Asesoría preventiva en materia penal — porque nadie debería enfrentar a la Fiscalía sola.</p>
+      <ul class="svc-list">
+        <li>Denuncias penales</li>
+        <li>Audiencias preliminares</li>
+        <li>Fiscalía y autoridades</li>
+        <li>Asesoría preventiva</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ════════ DIFERENCIACIÓN ════════ -->
+<section class="diff">
+  <div class="section-head reveal">
+    <div class="eyebrow">0 4 &nbsp;—&nbsp; D I F E R E N C I A</div>
+    <h2>¿Qué hace distinto trabajar con <em>DM Legal</em>?</h2>
+    <p class="lead">Una comparación honesta — no porque seamos las únicas, sino porque hacemos las cosas distinto.</p>
+  </div>
+  <div class="diff-table reveal">
+    <div class="diff-h"></div>
+    <div class="diff-h col-other">La oficina jurídica tradicional</div>
+    <div class="diff-h col-dm">DM Legal</div>
+
+    <div class="diff-row-label">Lenguaje</div>
+    <div class="diff-cell">Tecnicismos, fórmulas, latín innecesario.</div>
+    <div class="diff-cell dm">Te explicamos como si fuéramos tu amiga. Porque lo somos, en este caso.</div>
+
+    <div class="diff-row-label">Primera consulta</div>
+    <div class="diff-cell">Costosa, formal, evaluativa.</div>
+    <div class="diff-cell dm">Gratuita, conversada, sin compromiso.</div>
+
+    <div class="diff-row-label">Tiempo de respuesta</div>
+    <div class="diff-cell">"Le respondemos en la próxima semana."</div>
+    <div class="diff-cell dm">Menos de 24 horas, todos los días.</div>
+
+    <div class="diff-row-label">Honorarios</div>
+    <div class="diff-cell">Opacos, sorpresas, costos extras.</div>
+    <div class="diff-cell dm">Claros, por escrito, sin letra pequeña.</div>
+
+    <div class="diff-row-label">Enfoque</div>
+    <div class="diff-cell">El caso primero, la persona después.</div>
+    <div class="diff-cell dm">La persona primero. El caso es la consecuencia.</div>
+  </div>
+</section>
+
+<!-- ════════ BANNER QUOTE ════════ -->
+<section class="banner">
+  <div class="banner-inner glass-dark reveal-scale">
+    <div class="banner-mark">"</div>
+    <div class="banner-quote">La ley no fue escrita para confundirte.<br>Fue escrita para <em>protegerte</em>.</div>
+    <div class="banner-cite">— &nbsp;D M &nbsp; L E G A L</div>
+  </div>
+</section>
+
+<!-- ════════ CONTACTO ════════ -->
+<section class="contacto" id="contacto">
+  <div class="section-head reveal">
+    <div class="eyebrow">0 5 &nbsp;—&nbsp; C O N T A C T O</div>
+    <h2>Cuéntanos qué <em>pasó</em>.</h2>
+    <p class="lead">Te respondemos en menos de 24 horas. Sin compromiso, sin disclaimers largos. Solo tú, tu caso, y el primer paso.</p>
+  </div>
+  <div class="contacto-grid">
+    <a class="contacto-card glass reveal" href="https://wa.link/xecgf9" target="_blank" rel="noopener">
+      <div class="eyebrow">W H A T S A P P</div>
+      <h3>Escríbenos ya</h3>
+      <p>Para algo urgente o si prefieres voz a texto. Respondemos rápido.</p>
+      <div class="mono">+57 311 460 3579</div>
+    </a>
+    <a class="contacto-card glass reveal" href="mailto:dmlegal.asesorias@gmail.com">
+      <div class="eyebrow">C O R R E O</div>
+      <h3>Cuéntanos por escrito</h3>
+      <p>Ideal si quieres adjuntar documentos o describir el caso con detalle.</p>
+      <div class="mono">dmlegal.asesorias@gmail.com</div>
+    </a>
+    <div class="contacto-card glass reveal">
+      <div class="eyebrow">U B I C A C I Ó N</div>
+      <h3>Santa Marta</h3>
+      <p>Magdalena, Colombia. Atendemos casos en todo el territorio nacional, de forma presencial y virtual.</p>
+      <div class="mono">Atención · Lun–Vie · 8 a.m. – 6 p.m.</div>
+    </div>
+  </div>
+  <div class="contacto-ctas">
+    <a class="btn btn-primary" href="https://wa.link/xecgf9" target="_blank" rel="noopener">Agenda por WhatsApp</a>
+    <a class="btn btn-ghost" href="mailto:dmlegal.asesorias@gmail.com">Envíanos un correo</a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">DM Legal</div>
+      <div class="footer-tag">Derecho Claro · Soluciones Reales</div>
+      <p class="footer-desc">Firma de abogadas colombianas. Acompañamos a personas, familias y emprendedoras en lo que la ley no debería haber complicado.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Áreas</h4>
+      <ul>
+        <li><a href="#servicios">Constitucional</a></li>
+        <li><a href="#servicios">Familia</a></li>
+        <li><a href="#servicios">Contratos</a></li>
+        <li><a href="#servicios">Penal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Firma</h4>
+      <ul>
+        <li><a href="#nosotras">Nosotras</a></li>
+        <li><a href="#abogadas">El equipo</a></li>
+        <li><a href="#servicios">Portafolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.link/xecgf9" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:dmlegal.asesorias@gmail.com">dmlegal.asesorias@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/dmlegal.co?igsh=NGU2NXYwd3pzNTUy" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 &nbsp;· &nbsp;D M &nbsp; L E G A L &nbsp;· &nbsp;Todos los derechos reservados</div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:flex-end;">
+      <a href="legal/privacidad.html" style="color:rgba(232,213,163,0.55);font-family:var(--font-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--c-oro)'" onmouseout="this.style.color='rgba(232,213,163,0.55)'">Privacidad</a>
+      <a href="legal/terminos.html"   style="color:rgba(232,213,163,0.55);font-family:var(--font-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--c-oro)'" onmouseout="this.style.color='rgba(232,213,163,0.55)'">Términos</a>
+      <a href="legal/cookies.html"    style="color:rgba(232,213,163,0.55);font-family:var(--font-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--c-oro)'" onmouseout="this.style.color='rgba(232,213,163,0.55)'">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ WHATSAPP FAB ════════ -->
+<a class="wfab" href="https://wa.link/xecgf9" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.5-1.3l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.6 0-4.6 3.8-8.3 8.4-8.3s8.4 3.7 8.4 8.3-3.8 8.7-8.1 8.7z"/>
+  </svg>
+  <span class="wfab-tip glass">Escríbenos al WhatsApp</span>
+</a>
+
+<!-- ════════════════════ JS ════════════════════ -->
+<script>
+(() => {
+  const noMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const hasHover = window.matchMedia('(hover:hover)').matches;
+
+  /* ── Cursor personalizado ── */
+  const dot  = document.getElementById('cdot');
+  const ring = document.getElementById('cring');
+  if (!noMotion && hasHover) {
+    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
+    window.addEventListener('pointermove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    }, { passive: true });
+    const tick = () => {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+    document.querySelectorAll('a, button, .btn, .svc, .pilar, .tag, .contacto-card, .wfab').forEach(el => {
+      el.addEventListener('pointerenter', () => ring.classList.add('hover'));
+      el.addEventListener('pointerleave', () => ring.classList.remove('hover'));
+    });
+  } else {
+    dot.style.display = 'none';
+    ring.style.display = 'none';
+  }
+
+  /* ── Estado scrolled del nav ── */
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 60);
+  onScroll();
+  addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Menú burger mobile ── */
+  const burger   = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+  }));
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 60, behavior: noMotion ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ── Revelaciones al entrar en viewport ── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const io = new IntersectionObserver(entries => {
+    const byParent = new Map();
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const p = en.target.parentElement;
+      if (!byParent.has(p)) byParent.set(p, []);
+      byParent.get(p).push(en.target);
+    });
+    byParent.forEach(items => {
+      items.forEach((el, i) => {
+        setTimeout(() => el.classList.add('is-visible'), noMotion ? 0 : i * 80);
+        io.unobserve(el);
+      });
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  /* ── Contadores animados ── */
+  const counters = document.querySelectorAll('[data-count]');
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const node   = en.target;
+      const target = parseInt(node.dataset.count, 10);
+      const start  = performance.now();
+      const dur    = noMotion ? 0 : 2000;
+      const tick = now => {
+        const t      = dur === 0 ? 1 : Math.min(1, (now - start) / dur);
+        const eased  = 1 - Math.pow(1 - t, 4);
+        node.textContent = Math.round(eased * target).toLocaleString('es-CO');
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      cio.unobserve(node);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => cio.observe(c));
+
+  /* ── Parallax blobs del hero ── */
+  if (!noMotion) {
+    const blobs = document.querySelectorAll('[data-parallax]');
+    addEventListener('scroll', () => {
+      const y = scrollY;
+      blobs.forEach(b => {
+        const k = parseFloat(b.dataset.parallax);
+        b.style.transform = `translate3d(0, ${y * k}px, 0)`;
+      });
+    }, { passive: true });
+  }
+})();
+</script>
+
+<!-- ════════ BANNER DE COOKIES ════════ -->
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite" style="
+  display:none;
+  position:fixed; bottom:0; left:0; right:0; z-index:9000;
+  background:rgba(46,8,18,0.96);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border-top:1px solid rgba(201,168,76,0.30);
+  padding:20px 40px;
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(0.22,0.61,0.36,1);
+">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:260px;">
+      <p style="font-family:'Montserrat',Arial,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C9A84C;margin-bottom:6px;">Cookies</p>
+      <p style="font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:13.5px;line-height:1.6;color:rgba(232,213,163,0.80);margin:0;">
+        Usamos una cookie técnica para recordar esta preferencia. No usamos publicidad ni rastreo.
+        <a href="legal/cookies.html" style="color:#C9A84C;text-underline-offset:3px;">Ver política de cookies</a>.
+      </p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+      <button id="cookie-accept-necessary" style="
+        font-family:'Montserrat',Arial,sans-serif;font-weight:500;font-size:11px;letter-spacing:0.20em;
+        text-transform:uppercase;padding:11px 20px;border:1px solid rgba(232,213,163,0.35);
+        background:transparent;color:rgba(232,213,163,0.70);cursor:pointer;border-radius:2px;
+        transition:border-color .2s,color .2s;
+      " onmouseover="this.style.borderColor='rgba(232,213,163,0.7)';this.style.color='#E8D5A3'"
+         onmouseout="this.style.borderColor='rgba(232,213,163,0.35)';this.style.color='rgba(232,213,163,0.70)'">
+        Solo necesarias
+      </button>
+      <button id="cookie-accept-all" style="
+        font-family:'Montserrat',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.20em;
+        text-transform:uppercase;padding:11px 22px;border:0;
+        background:#C9A84C;color:#2E0812;cursor:pointer;border-radius:2px;
+        transition:background .2s,transform .2s;
+      " onmouseover="this.style.background='#A98736';this.style.transform='translateY(-1px)'"
+         onmouseout="this.style.background='#C9A84C';this.style.transform='translateY(0)'">
+        Aceptar todas
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var CONSENT_KEY = 'dm_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  if (localStorage.getItem(CONSENT_KEY)) return;
+
+  setTimeout(function() {
+    banner.style.display = 'block';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        banner.style.transform = 'translateY(0)';
+      });
+    });
+  }, 1800);
+
+  function dismiss(value) {
+    localStorage.setItem(CONSENT_KEY, value);
+    banner.style.transform = 'translateY(100%)';
+    setTimeout(function() { banner.style.display = 'none'; }, 420);
+  }
+
+  document.getElementById('cookie-accept-all').addEventListener('click', function() {
+    dismiss('all');
+  });
+  document.getElementById('cookie-accept-necessary').addEventListener('click', function() {
+    dismiss('necessary');
+  });
+})();
+</script>
+
+</body>
+</html>
