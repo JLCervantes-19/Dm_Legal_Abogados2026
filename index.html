@@ -686,11 +686,15 @@ section { padding: 120px 56px; position: relative; }
   50%      { transform: translateX(-50%) translateY(-10px); }
 }
 
-/* ── Cuando el card está visible: foto entra y flota ── */
+/* ── Cuando el card está visible: foto entra ── */
 .abogada-card.slide-in .abogada-cutout {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-  animation: cutoutFloat 7s ease-in-out infinite 2.2s;
+  /* Sin animation: compite con transition en transform y la bloquea */
+}
+/* Flotación activa solo tras completar la transición de entrada */
+.abogada-cutout.is-floating {
+  animation: cutoutFloat 7s ease-in-out infinite;
 }
 
 .abogada-card:hover .abogada-halo  { opacity: 1; animation-duration: 3s; }
@@ -728,12 +732,12 @@ section { padding: 120px 56px; position: relative; }
   /* La foto puede salir del recuadro para viajar desde afuera de la página */
   .abogada-foto.has-cutout { overflow: visible; }
 
-  /* Primera abogada: foto entra desde la izquierda */
-  .abogada:not(.mirror) .abogada-cutout {
+  /* Primera abogada: foto entra desde la izquierda (solo antes de activar) */
+  .abogada:not(.mirror) .abogada-card:not(.slide-in) .abogada-cutout {
     transform: translateX(calc(-50% - 1100px)) translateY(0);
   }
-  /* Segunda abogada (mirror): foto entra desde la derecha */
-  .abogada.mirror .abogada-cutout {
+  /* Segunda abogada (mirror): foto entra desde la derecha (solo antes de activar) */
+  .abogada.mirror .abogada-card:not(.slide-in) .abogada-cutout {
     transform: translateX(calc(-50% + 1100px)) translateY(0);
   }
 }
@@ -1291,7 +1295,7 @@ section { padding: 120px 56px; position: relative; }
     <a href="#abogadas">Abogadas</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
-    <a href="#contacto" class="btn btn-primary" style="padding:11px 20px;">Consulta gratuita</a>
+    <a href="#contacto" class="btn btn-primary" style="padding:11px 20px;">Consulta</a>
   </nav>
   <button class="nav-burger" id="burger" aria-label="Menú"><span></span></button>
 </header>
@@ -1403,10 +1407,10 @@ section { padding: 120px 56px; position: relative; }
       </div>
     </div>
     <div class="abogada-body reveal-right">
-      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;</div>
-      <div class="abogada-name">Diana Ruiz</div>
+      <div class="eyebrow">D E P E n D I E n T E &nbsp;· &nbsp;J U D I C I A L</div>
+      <div class="abogada-name">Diana Ruiz Castillo</div>
       <div class="abogada-role">Socia Fundadora</div>
-      <div class="abogada-specialty">Derecho Constitucional · Derecho de Familia</div>
+      <div class="abogada-specialty">Derecho Constitucional</div>
       <p class="abogada-bio">Abogada con énfasis en derechos fundamentales y protección efectiva ante el Estado. Tutelas, peticiones y procesos de familia son su día a día — y su forma de creer que la justicia sí llega, cuando alguien sabe cómo pedirla.</p>
       <p class="abogada-bio">Cree que detrás de cada caso hay una historia, y que la mejor defensa empieza por escuchar. Si la ley te dio la razón, ella encuentra cómo hacerla valer.</p>
       <div class="abogada-tags">
@@ -1434,7 +1438,7 @@ section { padding: 120px 56px; position: relative; }
     </div>
     <div class="abogada-body reveal-left">
       <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;</div>
-      <div class="abogada-name">Maira Alejandra Medina Castillo</div>
+      <div class="abogada-name">Maira Medina Castillo</div>
       <div class="abogada-role">Socia</div>
       <div class="abogada-specialty">Contratos · Actuaciones Penales</div>
       <p class="abogada-bio">Abogada con foco en derecho contractual y acompañamiento penal. Redacta y revisa contratos antes de que el problema exista — y representa cuando ya existió. Su superpoder: leer entre líneas.</p>
@@ -1770,19 +1774,39 @@ section { padding: 120px 56px; position: relative; }
   revealEls.forEach(el => io.observe(el));
 
   /* ── Slide-in dramático de tarjetas de abogadas ── */
-  const abogadaCards = document.querySelectorAll('.slide-from-left, .slide-from-right');
+  const abogadaCards = Array.from(document.querySelectorAll('.slide-from-left, .slide-from-right'));
+
+  function activateCard(card) {
+    card.classList.add('slide-in');
+    if (!noMotion) {
+      const cutout = card.querySelector('.abogada-cutout');
+      if (cutout) setTimeout(() => cutout.classList.add('is-floating'), 2200);
+    }
+  }
+
   const abogadaIo = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      en.target.classList.add('slide-in');
+    /* Filtrar solo los que entran al viewport */
+    const visible = entries.filter(en => en.isIntersecting);
+    if (!visible.length) return;
+
+    /* Ordenar de arriba a abajo: garantiza que la 1.ª foto siempre va primero */
+    visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+    visible.forEach((en, i) => {
       abogadaIo.unobserve(en.target);
+      const card = en.target;
+      /* Escalonar 600ms por cada posicion; si entran solos no hay retraso adicional */
+      const stagger = noMotion ? 0 : i * 600;
+      const go = () => requestAnimationFrame(() => requestAnimationFrame(() => activateCard(card)));
+      stagger > 0 ? setTimeout(go, stagger) : go();
     });
-  }, { threshold: 0.01, rootMargin: '0px 600px 0px 600px' });
+  /* rootMargin positivo en bottom: dispara cuando el card asoma por el borde inferior */
+  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
   abogadaCards.forEach(el => abogadaIo.observe(el));
-  /* Fallback: si tras 3s alguna tarjeta sigue oculta, la revelamos */
+  /* Fallback: si tras 4s alguna tarjeta sigue sin activar, la revelamos */
   setTimeout(() => {
-    abogadaCards.forEach(el => el.classList.add('slide-in'));
-  }, 3000);
+    abogadaCards.forEach(el => { if (!el.classList.contains('slide-in')) activateCard(el); });
+  }, 4000);
 
   /* ── Contadores animados ── */
   const counters = document.querySelectorAll('[data-count]');
