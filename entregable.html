@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documento de Entrega — DM Legal Landing Premium</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #2a1a1f;
+    background: #f9f5ee;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 64px;
+    background: #fff;
+    min-height: 100vh;
+  }
+
+  /* ── Cabecera ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #4A0F1C;
+    padding-bottom: 24px;
+    margin-bottom: 36px;
+  }
+  .header-left h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 600;
+    color: #4A0F1C;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .header-left p {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #A98736;
+    font-weight: 500;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 11px;
+    color: #7a5a4a;
+    line-height: 1.8;
+  }
+  .header-right strong {
+    display: block;
+    font-size: 12px;
+    color: #2a1a1f;
+    font-weight: 600;
+  }
+
+  /* ── Intro ── */
+  .intro {
+    background: #f9f5ee;
+    border-left: 3px solid #C9A84C;
+    padding: 16px 20px;
+    margin-bottom: 36px;
+    font-size: 13px;
+    color: #4a3030;
+    line-height: 1.75;
+  }
+
+  /* ── Secciones ── */
+  .section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4A0F1C;
+    border-bottom: 1px solid #e8d5a3;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  .section-title span {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #A98736;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  /* ── Items de entregable ── */
+  .item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .item-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #C9A84C;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .item-text strong {
+    font-weight: 600;
+    color: #2a1a1f;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .item-text p {
+    color: #5a4040;
+    font-size: 12.5px;
+  }
+
+  /* ── Tabla ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 12.5px;
+  }
+  thead tr {
+    background: #4A0F1C;
+    color: #E8D5A3;
+  }
+  thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  tbody tr:nth-child(even) { background: #fdf8f0; }
+  tbody tr:nth-child(odd)  { background: #fff; }
+  tbody td {
+    padding: 9px 14px;
+    color: #3a2525;
+    border-bottom: 1px solid #ede0c8;
+    vertical-align: top;
+  }
+  tbody td:first-child { font-weight: 500; color: #4A0F1C; }
+
+  /* ── Firma ── */
+  .firmas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e8d5a3;
+  }
+  .firma-bloque p {
+    font-size: 11px;
+    color: #7a5a4a;
+    margin-bottom: 56px;
+  }
+  .firma-linea {
+    border-top: 1px solid #2a1a1f;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #2a1a1f;
+    font-weight: 500;
+  }
+  .firma-linea span {
+    display: block;
+    font-weight: 300;
+    color: #7a5a4a;
+    margin-top: 2px;
+  }
+
+  /* ── Nota al pie ── */
+  .footer-doc {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e8d5a3;
+    font-size: 10.5px;
+    color: #a08070;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page { padding: 40px 48px; box-shadow: none; }
+    .section { page-break-inside: avoid; }
+    .firmas { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cabecera -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Documento de Entrega</h1>
+      <p>Sitio Web &nbsp;·&nbsp; DM Legal &nbsp;·&nbsp; Landing Premium</p>
+    </div>
+    <div class="header-right">
+      <strong>Fecha de emisión</strong>
+      13 de mayo de 2026
+      <br><br>
+      <strong>Versión</strong>
+      1.0 — Entrega final
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    El presente documento describe los elementos entregados en el desarrollo del sitio web oficial de <strong>DM Legal</strong>, firma colombiana de asesoría jurídica. Sirve como constancia de los servicios prestados y como base para la formalización del acuerdo entre las partes.
+  </div>
+
+  <!-- 1. Partes -->
+  <div class="section">
+    <div class="section-title"><span>01</span>Partes del acuerdo</div>
+    <table>
+      <thead>
+        <tr><th>Rol</th><th>Nombre / Entidad</th><th>Correo de contacto</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Contratante</td>
+          <td>DM Legal — Diana Ruiz Castillo &amp; Maira Medina Castillo</td>
+          <td>——</td>
+        </tr>
+        <tr>
+          <td>Proveedor</td>
+          <td>Desarrollador web independiente</td>
+          <td>jhanleiderc@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. Descripción general -->
+  <div class="section">
+    <div class="section-title"><span>02</span>Descripción del producto entregado</div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Sitio web tipo landing page</strong>
+        <p>Página web de una sola pantalla (landing page) diseñada y desarrollada a medida para presentar la firma DM Legal, sus integrantes y sus servicios jurídicos al público general.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Diseño adaptable (responsive)</strong>
+        <p>El sitio se ve correctamente en celulares, tabletas y computadores de escritorio, sin necesidad de aplicaciones adicionales.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Identidad visual propia</strong>
+        <p>Paleta de colores, tipografía y estilo visual diseñados exclusivamente para DM Legal, usando los colores guinda, dorado y crema como base de marca.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Publicado en internet</strong>
+        <p>El sitio está desplegado y accesible al público a través de la plataforma Vercel, con repositorio de código en GitHub para respaldo y control de versiones.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Secciones del sitio -->
+  <div class="section">
+    <div class="section-title"><span>03</span>Secciones incluidas en el sitio</div>
+    <table>
+      <thead>
+        <tr><th>Sección</th><th>Contenido</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Inicio (Hero)</td>
+          <td>Mensaje principal de la firma, llamado a la acción y acceso al WhatsApp</td>
+        </tr>
+        <tr>
+          <td>Estadísticas</td>
+          <td>Cifras de clientes atendidos, años de experiencia y nivel de satisfacción</td>
+        </tr>
+        <tr>
+          <td>Nosotras</td>
+          <td>Presentación de la firma, misión y valores</td>
+        </tr>
+        <tr>
+          <td>El Equipo</td>
+          <td>Perfil de cada abogada con foto, especialidades, biografía y áreas de práctica</td>
+        </tr>
+        <tr>
+          <td>Servicios</td>
+          <td>Listado visual de los servicios jurídicos ofrecidos</td>
+        </tr>
+        <tr>
+          <td>¿Por qué DM Legal?</td>
+          <td>Tabla comparativa que diferencia la firma frente a otras opciones</td>
+        </tr>
+        <tr>
+          <td>Contacto</td>
+          <td>Formulario de contacto y datos de la firma</td>
+        </tr>
+        <tr>
+          <td>Pie de página</td>
+          <td>Navegación, redes sociales y enlaces legales</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Funcionalidades -->
+  <div class="section">
+    <div class="section-title"><span>04</span>Funcionalidades y características técnicas</div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Animaciones de entrada al hacer scroll</strong>
+        <p>Las fotos de las abogadas aparecen con un efecto de deslizamiento desde fuera de la pantalla a medida que el usuario baja por la página, de forma secuencial.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Botón flotante de WhatsApp</strong>
+        <p>Acceso directo a WhatsApp visible en toda la página para facilitar el contacto inmediato con la firma.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Aviso de cookies</strong>
+        <p>Banner de consentimiento de cookies que cumple con los requisitos legales básicos de protección de datos.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Páginas legales</strong>
+        <p>Páginas independientes de Política de Privacidad, Términos y Condiciones y Política de Cookies.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Optimización para buscadores (SEO básico)</strong>
+        <p>El sitio incluye etiquetas de descripción, título y previsualización para redes sociales (Open Graph).</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-dot"></div>
+      <div class="item-text">
+        <strong>Scroll siempre desde arriba</strong>
+        <p>Al recargar la página, el usuario siempre vuelve al inicio, garantizando una experiencia de navegación limpia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Lo que NO incluye -->
+  <div class="section">
+    <div class="section-title"><span>05</span>Lo que no está incluido en esta entrega</div>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Observación</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Correo corporativo</td>
+          <td>No se incluye configuración de correos tipo contacto@dmlegal.co</td>
+        </tr>
+        <tr>
+          <td>Procesamiento de formularios</td>
+          <td>El formulario de contacto requiere integración con un servicio externo (pendiente de definir)</td>
+        </tr>
+        <tr>
+          <td>Mantenimiento posterior</td>
+          <td>Los cambios de contenido futuros (textos, fotos, precios) no están incluidos en esta entrega</td>
+        </tr>
+        <tr>
+          <td>Publicidad pagada (Google Ads)</td>
+          <td>No se incluyen campañas de pauta ni publicidad pagada en ninguna plataforma</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 6. Entregables digitales -->
+  <div class="section">
+    <div class="section-title"><span>06</span>Entregables digitales</div>
+    <table>
+      <thead>
+        <tr><th>Entregable</th><th>Descripción</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Código fuente</td>
+          <td>Acceso al repositorio en GitHub con todo el código del sitio</td>
+        </tr>
+        <tr>
+          <td>Sitio publicado</td>
+          <td>URL activa del sitio desplegado en Vercel, accesible desde cualquier dispositivo</td>
+        </tr>
+        <tr>
+          <td>Activos visuales</td>
+          <td>Imágenes de las abogadas y logotipo en la carpeta de activos del proyecto</td>
+        </tr>
+        <tr>
+          <td>Dominio web</td>
+          <td>Configuración y vinculación del dominio personalizado (ej: dmlegal.co) una vez sea adquirido por el contratante</td>
+        </tr>
+        <tr>
+          <td>SEO con palabras clave</td>
+          <td>Optimización del HTML con palabras clave para posicionamiento en Google: título, descripciones, etiquetas geográficas de Santa Marta y datos estructurados para buscadores</td>
+        </tr>
+        <tr>
+          <td>Este documento</td>
+          <td>Documento de entrega en formato PDF como respaldo del acuerdo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Firmas -->
+  <div class="firmas">
+    <div class="firma-bloque">
+      <p>Firma y fecha de aceptación del contratante</p>
+      <div class="firma-linea">
+        Diana Ruiz Castillo / Maira Medina Castillo
+        <span>DM Legal — Contratante</span>
+      </div>
+    </div>
+    <div class="firma-bloque">
+      <p>Firma y fecha del proveedor de servicios</p>
+      <div class="firma-linea">
+        Desarrollador Web
+        <span>Proveedor del servicio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie -->
+  <div class="footer-doc">
+    Documento generado el 13 de mayo de 2026 &nbsp;·&nbsp; DM Legal &nbsp;·&nbsp; Derecho claro, soluciones reales<br>
+    Este documento tiene carácter informativo y de constancia. Para validez legal como contrato debe ser revisado y firmado por ambas partes.
+  </div>
+
+</div>
+</body>
+</html>
