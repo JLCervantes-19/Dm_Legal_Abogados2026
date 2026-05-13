@@ -675,8 +675,8 @@ section { padding: 120px 56px; position: relative; }
   transform: translateX(-50%) translateY(60px);
   /* transición lenta con delay para que llegue DESPUÉS del card */
   transition:
-    transform 1.6s 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity   1.2s 0.35s ease-out;
+    transform 3.0s 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   2.0s 0.35s ease-out;
   will-change: transform, opacity;
 }
 
@@ -1407,18 +1407,18 @@ section { padding: 120px 56px; position: relative; }
       </div>
     </div>
     <div class="abogada-body reveal-right">
-      <div class="eyebrow">D E P E n D I E n T E &nbsp;· &nbsp;J U D I C I A L</div>
+      <div class="eyebrow">D E P E N D I E N T E &nbsp;·&nbsp; J U D I C I A L</div>
       <div class="abogada-name">Diana Ruiz Castillo</div>
       <div class="abogada-role">Socia Fundadora</div>
-      <div class="abogada-specialty">Derecho Constitucional</div>
-      <p class="abogada-bio">Abogada con énfasis en derechos fundamentales y protección efectiva ante el Estado. Tutelas, peticiones y procesos de familia son su día a día — y su forma de creer que la justicia sí llega, cuando alguien sabe cómo pedirla.</p>
-      <p class="abogada-bio">Cree que detrás de cada caso hay una historia, y que la mejor defensa empieza por escuchar. Si la ley te dio la razón, ella encuentra cómo hacerla valer.</p>
+      <div class="abogada-specialty">Tutelas · Peticiones · Contratos</div>
+      <p class="abogada-bio">Asesora jurídica con enfoque claro, cercano y estratégico. Se especializa en derechos de petición, acciones de tutela, incidentes de desacato, acciones de cumplimiento y redacción de contratos — todo lo que necesitas antes de que el problema escale.</p>
+      <p class="abogada-bio">Cree en un derecho accesible para todos. Trabaja con compromiso, responsabilidad y atención personalizada: su objetivo es que cada persona se sienta escuchada, orientada y respaldada durante todo el proceso.</p>
       <div class="abogada-tags">
-        <div class="tag glass">Tutela</div>
         <div class="tag glass">Derecho de Petición</div>
-        <div class="tag glass">Filiación</div>
-        <div class="tag glass">Registro Civil</div>
+        <div class="tag glass">Acción de Tutela</div>
+        <div class="tag glass">Incidente de Desacato</div>
         <div class="tag glass">Acción de Cumplimiento</div>
+        <div class="tag glass">Contratos</div>
       </div>
     </div>
   </div>
@@ -1431,25 +1431,25 @@ section { padding: 120px 56px; position: relative; }
         <div class="abogada-ground"></div>
         <img class="abogada-cutout"
              src="assets/maira-abogada.png"
-             alt="Maira Alejandra Medina Castillo — Abogada DM Legal"
+             alt="Maira Medina Castillo — Abogada DM Legal"
              onerror="this.style.display='none';this.parentElement.classList.add('cutout-missing');">
         <div class="abogada-foto-initials cutout-fallback">M</div>
       </div>
     </div>
     <div class="abogada-body reveal-left">
-      <div class="eyebrow">A B O G A D A &nbsp;· &nbsp;</div>
+      <div class="eyebrow">Abg. Especialista en Derecho Penal y Criminología&nbsp;·&nbsp;</div>
       <div class="abogada-name">Maira Medina Castillo</div>
       <div class="abogada-role">Socia</div>
-      <div class="abogada-specialty">Contratos · Actuaciones Penales</div>
-      <p class="abogada-bio">Abogada con foco en derecho contractual y acompañamiento penal. Redacta y revisa contratos antes de que el problema exista — y representa cuando ya existió. Su superpoder: leer entre líneas.</p>
-      <p class="abogada-bio">Convencida de que un contrato bien hecho previene años de juicio. Y de que ninguna denuncia debería enfrentarse en soledad.</p>
+      <div class="abogada-specialty">Derechos Fundamentales · Penal · Contratos</div>
+      <p class="abogada-bio">Asesora jurídica estratégica con experiencia en protección de derechos fundamentales, recursos administrativos, actuaciones penales, trámites civiles y procesos de familia — soluciones eficaces tanto en escenarios preventivos como ante autoridades públicas y judiciales.</p>
+      <p class="abogada-bio">Además, asesora en elaboración y revisión de contratos, defensa administrativa en tránsito, corrección de registros civiles y acompañamiento en denuncias penales. Su prioridad: que cada cliente sienta tranquilidad, seguridad jurídica y confianza durante todo el proceso.</p>
       <div class="abogada-tags">
+        <div class="tag glass">Derechos Fundamentales</div>
+        <div class="tag glass">Actuaciones Penales</div>
         <div class="tag glass">Contratos</div>
-        <div class="tag glass">Compraventa</div>
-        <div class="tag glass">Arrendamiento</div>
-        <div class="tag glass">Denuncia Penal</div>
-        <div class="tag glass">Audiencias</div>
         <div class="tag glass">Recursos Administrativos</div>
+        <div class="tag glass">Tránsito</div>
+        <div class="tag glass">Registro Civil</div>
       </div>
     </div>
   </div>
@@ -1780,7 +1780,7 @@ section { padding: 120px 56px; position: relative; }
     card.classList.add('slide-in');
     if (!noMotion) {
       const cutout = card.querySelector('.abogada-cutout');
-      if (cutout) setTimeout(() => cutout.classList.add('is-floating'), 2200);
+      if (cutout) setTimeout(() => cutout.classList.add('is-floating'), 3600);
     }
   }
 
@@ -1800,8 +1800,8 @@ section { padding: 120px 56px; position: relative; }
       const go = () => requestAnimationFrame(() => requestAnimationFrame(() => activateCard(card)));
       stagger > 0 ? setTimeout(go, stagger) : go();
     });
-  /* rootMargin positivo en bottom: dispara cuando el card asoma por el borde inferior */
-  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+  /* rootMargin 300px en bottom: la foto empieza a viajar antes de que el card sea visible */
+  }, { threshold: 0.05, rootMargin: '0px 0px 300px 0px' });
   abogadaCards.forEach(el => abogadaIo.observe(el));
   /* Fallback: si tras 4s alguna tarjeta sigue sin activar, la revelamos */
   setTimeout(() => {
